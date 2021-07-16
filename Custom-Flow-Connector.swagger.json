@@ -1,0 +1,80 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Custom Flow Connector",
+    "description": "This Custom Connector can be used to Cancel Flow Running Instance. It used MS Flow Rest API to cancel flow run instance.",
+    "version": "1.0"
+  },
+  "host": "api.flow.microsoft.com",
+  "basePath": "/providers/Microsoft.ProcessSimple/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/environments/{environmentId}/flows/{flowId}/runs/{runId}/cancel": {
+      "post": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        },
+        "summary": "Cancel Run",
+        "description": "This action will allow you to cancel a flow run",
+        "operationId": "cancelRun",
+        "parameters": [
+          {
+            "name": "environmentId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "flowId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "runId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "api-version",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "undefined": {
+      "type": "oauth2",
+      "flow": "accessCode",
+      "authorizationUrl": "https://login.windows.net/common/oauth2/authorize",
+      "tokenUrl": "https://login.windows.net/common/oauth2/authorize",
+      "scopes": {}
+    }
+  },
+  "security": [
+    {
+      "undefined": []
+    }
+  ],
+  "tags": []
+}
